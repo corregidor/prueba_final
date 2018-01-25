@@ -1,0 +1,19 @@
+
+<ul>
+
+<% @todos.each do |todo| %>
+<li class= "well" style="list-style-type:none">
+<%= todo.description %>
+<%= todo.completed %>
+<%= link_to 'Detalle', todo_path(todo) %>
+<%= link_to 'Editar', todo_path(todo), method: :patch %>
+<%= link_to 'Destruir', dest_path(todo), method: :delete %>
+<%= link_to 'Completado', comp_path(todo)%>
+
+<% end %>
+</li>
+
+</ul>
+
+
+<%= link_to 'Crear ToDo', todos_new_path %>
